@@ -29,7 +29,7 @@ public class Crawler {
                 .filter(l -> Objects.isNull(l.getProducer()) || l.getProducer().equals(wanted.getProducer()))
                 .toList();
         } catch (Exception e) {
-            System.out.println(String.format("Attempt to find '%s' failed."));
+            System.out.printf("Attempt to find '%s' failed.%n", wanted.getName());
         }
         return null;
     }
