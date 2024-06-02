@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class Crawler {
     private final static String URL_PREFIX = "oferty/kolekcje-i-sztuka/q/";
-    private final static String URL_POSTFIX = "";
 
     @Value("${webresource}")
     private static String BASE_URL;
@@ -30,7 +29,7 @@ public class Crawler {
                 .filter(l -> Objects.isNull(l.getProducer()) || l.getProducer().equals(wanted.getProducer()))
                 .toList();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(String.format("Attempt to find '%s' failed."));
         }
         return null;
     }
