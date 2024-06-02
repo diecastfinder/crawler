@@ -7,7 +7,6 @@ import org.example.crawler.services.tools.crawler.Crawler;
 import org.example.crawler.web.model.FoundModelDto;
 import org.example.crawler.web.model.WantedModelDto;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @Service
