@@ -14,17 +14,17 @@ public class PagerElement {
     }
 
     public Integer getMaxPageNo() {
-        return Integer.valueOf(page.locator(pagerMaxPageValueCss).getAttribute("max"));
+        return Integer.valueOf(page.locator(pagerMaxPageValueCss).first().getAttribute("max"));
     }
 
     public void openNextPage() {
-        String currentPageUri = page.url().split("/?")[0];
+        String currentPageUri = page.url().split("\\?")[0];
         page.navigate(currentPageUri + "?page" + getCurrentPageNo() + 1);
     }
 
     public void openPage(Integer pageNumber) {
-        String currentPageUri = page.url().split("/?")[0];
-        page.navigate(currentPageUri + "?page" + pageNumber);
+        String currentPageUri = page.url().split("\\?")[0];
+        page.navigate(currentPageUri + "?page=" + pageNumber);
     }
 
     private Integer getCurrentPageNo() {
