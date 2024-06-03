@@ -7,10 +7,10 @@ import org.example.crawler.web.model.FoundModelDto;
 
 public class ResultPage {
 
-    private Page page;
+    private final Page page;
 
-    private String lotCss = "css=article";
-    private PagerElement pager;
+    private final String lotCss = "css=article";
+    private final PagerElement pager;
 
     public ResultPage(Page page) {
         this.page = page;

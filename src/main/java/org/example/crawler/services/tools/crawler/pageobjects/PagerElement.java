@@ -1,13 +1,12 @@
 package org.example.crawler.services.tools.crawler.pageobjects;
 
 import com.microsoft.playwright.Page;
-import java.io.StringReader;
 
 public class PagerElement {
 
-    private Page page;
+    private final Page page;
 
-    private String pagerMaxPageValueCss = "css=.ml-pagination input";
+    private final String pagerMaxPageValueCss = "css=.ml-pagination input";
 
     public PagerElement(Page page) {
         this.page = page;

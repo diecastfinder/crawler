@@ -10,13 +10,13 @@ public class LotElement {
     @Value("${webresource}")
     private String BASE_URL;
 
-    private Locator element;
+    private final Locator element;
 
-    private String linkToLotCss = "css=a";
-    private String titleCss = "css=h3";
-    private String producerXpath = "xpath=//li/div[contains(text(),\"Marka\")]/span";
-    private String priceCss = "css=.ml-offer-price__dollars";
-    private String currencyCss = "css=.ml-offer-price__currency";
+    private final String linkToLotCss = "css=a";
+    private final String titleCss = "css=h3";
+    private final String producerXpath = "xpath=//li/div[contains(text(),\"Marka\")]/span";
+    private final String priceCss = "css=.ml-offer-price__dollars";
+    private final String currencyCss = "css=.ml-offer-price__currency";
 
     public LotElement(Locator element) {
         this.element = element;
