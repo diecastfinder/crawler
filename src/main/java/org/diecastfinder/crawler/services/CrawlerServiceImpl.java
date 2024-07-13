@@ -1,11 +1,11 @@
-package org.example.crawler.services;
+package org.diecastfinder.crawler.services;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.crawler.services.tools.crawler.Crawler;
-import org.example.crawler.web.model.FoundModelDto;
-import org.example.crawler.web.model.WantedModelDto;
+import org.diecastfinder.crawler.services.tools.crawler.Crawler;
+import org.diecastfinder.model.FoundModelDto;
+import org.diecastfinder.crawler.web.model.WantedModelDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

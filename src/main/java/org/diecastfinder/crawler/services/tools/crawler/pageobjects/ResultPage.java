@@ -1,9 +1,9 @@
-package org.example.crawler.services.tools.crawler.pageobjects;
+package org.diecastfinder.crawler.services.tools.crawler.pageobjects;
 
 import com.microsoft.playwright.Page;
 import java.util.ArrayList;
 import java.util.List;
-import org.example.crawler.web.model.FoundModelDto;
+import org.diecastfinder.model.FoundModelDto;
 
 public class ResultPage {
 

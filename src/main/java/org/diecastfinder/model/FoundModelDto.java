@@ -1,7 +1,5 @@
-package org.example.crawler.web.model;
+package org.diecastfinder.model;
 
-import java.util.Objects;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,13 +13,11 @@ import lombok.experimental.Accessors;
 @Builder
 @Accessors(chain = true)
 @ToString
-public class WantedModelDto {
-    private UUID id;
-
-    private String name;
+public class FoundModelDto {
+    private String uri;
+    private String nameRequested;
+    private String lotTitle;
     private String producer;
-    private Integer minPrice;
-    private Integer maxPrice;
+    private Integer price;
     private String currency;
-    private boolean active;
 }
