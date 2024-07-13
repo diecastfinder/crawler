@@ -2,13 +2,13 @@ package org.diecastfinder.crawler.services.tools.crawler.pageobjects;
 
 import com.microsoft.playwright.Locator;
 import org.apache.commons.lang3.StringUtils;
+import org.diecastfinder.crawler.config.WebConfig;
+import org.diecastfinder.crawler.config.WebConfigHelper;
 import org.diecastfinder.model.FoundModelDto;
-import org.springframework.beans.factory.annotation.Value;
 
 public class LotElement {
 
-    @Value("${webresource}")
-    private String BASE_URL;
+    private String BASE_URL = WebConfig.BASE_URL;
 
     private final Locator element;
 
