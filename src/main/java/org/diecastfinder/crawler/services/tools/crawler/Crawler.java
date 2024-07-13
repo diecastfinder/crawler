@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Crawler {
-    private final static String URL_PREFIX = "oferty/kolekcje-i-sztuka/q/";
+    private final static String URL_SUFFIX = "oferty/kolekcje-i-sztuka/q/";
 
     @Value("${webresource}")
     private String BASE_URL;
@@ -22,7 +22,7 @@ public class Crawler {
         try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch();
             Page page = browser.newPage();
-            page.navigate(BASE_URL + URL_PREFIX + wanted.getName());
+            page.navigate(BASE_URL + URL_SUFFIX + wanted.getName());
 
             ResultPage resultPage = new ResultPage(page);
             List<FoundModelDto> lotsFoundByName = resultPage.getLots();
