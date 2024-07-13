@@ -1,9 +1,9 @@
-package org.example.crawler.web.api.controller;
+package org.diecastfinder.crawler.web.api.controller;
 
 import java.util.List;
-import org.example.crawler.services.CrawlerService;
-import org.example.crawler.web.model.FoundModelDto;
-import org.example.crawler.web.model.WantedModelDto;
+import org.diecastfinder.crawler.services.CrawlerService;
+import org.diecastfinder.model.FoundModelDto;
+import org.diecastfinder.crawler.web.model.WantedModelDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

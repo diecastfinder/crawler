@@ -1,13 +1,13 @@
-package org.example.crawler.services.tools.crawler;
+package org.diecastfinder.crawler.services.tools.crawler;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import java.util.List;
 import java.util.Objects;
-import org.example.crawler.services.tools.crawler.pageobjects.ResultPage;
-import org.example.crawler.web.model.FoundModelDto;
-import org.example.crawler.web.model.WantedModelDto;
+import org.diecastfinder.crawler.services.tools.crawler.pageobjects.ResultPage;
+import org.diecastfinder.model.FoundModelDto;
+import org.diecastfinder.crawler.web.model.WantedModelDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

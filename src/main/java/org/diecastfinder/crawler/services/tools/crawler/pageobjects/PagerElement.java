@@ -1,4 +1,4 @@
-package org.example.crawler.services.tools.crawler.pageobjects;
+package org.diecastfinder.crawler.services.tools.crawler.pageobjects;
 
 import com.microsoft.playwright.Page;
 
