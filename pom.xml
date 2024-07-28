@@ -10,10 +10,10 @@
   </parent>
 
   <groupId>org.diecastfinder</groupId>
-  <artifactId>catalog</artifactId>
+  <artifactId>crawler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>crawler</name>
-  <description>crawler</description>
+  <description>Service to scrap models from allegrolokalnie</description>
 
   <dependencies>
     <dependency>
