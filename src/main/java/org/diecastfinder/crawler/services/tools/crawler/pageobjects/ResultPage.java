@@ -20,16 +20,18 @@ public class ResultPage {
     public List<FoundModelDto> getLots() {
 
         Integer maxPage = pager.getMaxPageNo();
-        List<FoundModelDto> lots = new ArrayList<>(page.locator(lotCss).all().stream()
-            .map(LotElement::new)
-            .map(LotElement::getModel)
-            .toList());
-        for (int i = 2; i <= maxPage; i++) {
-            pager.openPage(i);
-            lots.addAll(page.locator(lotCss).all().stream()
-                .map(LotElement::new)
-                .map(LotElement::getModel)
-                .toList());
+        List<FoundModelDto> lots = new ArrayList<>();
+
+        if (maxPage != 0) {
+            for (int i = 1; i <= maxPage; i++) {
+                if (i >= 2) {
+                    pager.openPage(i);
+                }
+                lots.addAll(page.locator(lotCss).all().stream()
+                    .map(LotElement::new)
+                    .map(LotElement::getModel)
+                    .toList());
+            }
         }
 
         return lots;
