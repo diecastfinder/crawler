@@ -5,11 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.diecastfinder.crawler.config.JmsConfig;
 import org.diecastfinder.crawler.services.tools.crawler.Crawler;
-import org.diecastfinder.model.AddModelEvent;
 import org.diecastfinder.model.FoundModelDto;
-import org.diecastfinder.crawler.web.model.WantedModelDto;
+import org.diecastfinder.model.WantedModelDto;
 import org.diecastfinder.model.factories.AddModelEventFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
