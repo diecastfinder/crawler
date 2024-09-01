@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import org.diecastfinder.crawler.services.tools.crawler.pageobjects.ResultPage;
 import org.diecastfinder.model.FoundModelDto;
-import org.diecastfinder.crawler.web.model.WantedModelDto;
+import org.diecastfinder.model.WantedModelDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

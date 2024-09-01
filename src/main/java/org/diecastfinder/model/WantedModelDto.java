@@ -1,4 +1,4 @@
-package org.diecastfinder.crawler.web.model;
+package org.diecastfinder.model;
 
 import java.util.UUID;
 import lombok.AllArgsConstructor;
