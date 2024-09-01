@@ -21,7 +21,7 @@ public class CrawlerServiceImpl implements CrawlerService {
 
     @Override
     public List<FoundModelDto> findModel(WantedModelDto wanted) {
-        log.debug(String.format("Trying to find model '%s'.", wanted.getName()));
+        log.info(String.format("Trying to find model '%s'.", wanted.getName()));
 
         List<FoundModelDto> foundModelDtos = crawler.find(wanted);
         log.debug(String.format("Sending %d models found by request '%s'.", foundModelDtos.size(), wanted.getName()));

@@ -13,7 +13,12 @@ public class PagerElement {
     }
 
     public Integer getMaxPageNo() {
-        return Integer.valueOf(page.locator(pagerMaxPageValueCss).first().getAttribute("max"));
+        if (page.locator(pagerMaxPageValueCss).count() > 0) {
+            return Integer.valueOf(page.locator(pagerMaxPageValueCss).first().getAttribute("max"));
+        }
+        else {
+            return 0;
+        }
     }
 
     public void openNextPage() {
