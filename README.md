@@ -9,6 +9,9 @@
 3. Run project eurekareganddiscovery, check http://localhost:8761
 4. Run [CatalogApplication.java](src%2Fmain%2Fjava%2Forg%2Fdiecastfinder%2Fcatalog%2FCatalogApplication.java) .main().
 
+## Testing
+* PACT provider contract test
+
 ## Deployment: artifacts preparation
 * Docker - to make a container out of service from DevOps point of view.
   To build docker image use command:
