@@ -26,15 +26,15 @@
             "id": null,
             "maxPrice": 2000,
             "minPrice": 400,
-            "name": "Mercedes W196R stromliner",
-            "producer": "CMC"
+            "name": "McLaren MP4",
+            "producer": "minichamps"
           },
           "contentType": "application/json",
           "encoded": false
         },
         "headers": {
           "Content-Type": [
-            "application/json; charset=utf-8"
+            "application/json"
           ]
         },
         "method": "POST",
@@ -42,20 +42,93 @@
       },
       "response": {
         "body": {
+          "content": [
+            {
+              "uri": "https://allegrolokalnie.pl/oferta"
+            }
+          ],
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 1
+                }
+              ]
+            },
+            "$[*].uri": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      },
+      "transport": "https",
+      "type": "Synchronous/HTTP"
+    },
+    {
+      "comments": {
+        "testname": "org.diecastfinder.wanted.pact.WantedConsumerPactTest.getFoundModel_whenWantedModelNotFound(MockServer)",
+        "text": [
+
+        ]
+      },
+      "description": "Not found Models",
+      "key": "f3e8b143",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "Query returns no models"
+        }
+      ],
+      "request": {
+        "body": {
           "content": {
+            "active": true,
             "currency": "PLN",
-            "lotTitle": "Mercedes W196R 1955-1956",
-            "nameRequested": "Mercedes W196R stromliner",
-            "price": 1500,
-            "producer": "CMC",
-            "uri": "some_url"
+            "id": null,
+            "maxPrice": 2000,
+            "minPrice": 400,
+            "name": "kfhli-never-found-ihgiu",
+            "producer": "minichamps"
           },
           "contentType": "application/json",
           "encoded": false
         },
         "headers": {
           "Content-Type": [
-            "application/json; charset=utf-8"
+            "application/json"
+          ]
+        },
+        "method": "POST",
+        "path": "/api/v1/crawler/find"
+      },
+      "response": {
+        "body": {
+          "content": [
+
+          ],
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
           ]
         },
         "status": 200

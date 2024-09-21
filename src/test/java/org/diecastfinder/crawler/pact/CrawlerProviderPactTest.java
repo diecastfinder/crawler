@@ -36,4 +36,9 @@ public class CrawlerProviderPactTest {
     void toCrawlerShouldReturnListOfFoundModels() {
 
     }
+
+    @State("Query returns no models")
+    void toCrawlerShouldReturnEmptyList() {
+
+    }
 }
