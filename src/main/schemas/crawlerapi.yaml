@@ -1,0 +1,135 @@
+openapi: 3.0.3
+info:
+  title: Crawler's API
+  description: API for a diecast model crawler service.
+  version: 1.0.0
+
+servers:
+  - url: https://localhost:8083
+    description: Localhost
+
+paths:
+  /api/v1/crawler/find:
+    post:
+      summary: Find lots in Allegro Localnie corresponding provided request.
+#      description: Find lots in Allegro Localnie corresponding provided request.
+      operationId: findCrawlerData
+      requestBody:
+        description: A model to find.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WantedModelDto'
+      responses:
+        '200':
+          description: Successful response, returns a list of lots that satisfy request.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FoundModelDto'
+        '400':
+          description: Invalid input provided.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Invalid URL provided."
+        '404':
+          description: The specified URL was not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "URL not found."
+        '500':
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "An unexpected error occurred."
+
+components:
+  schemas:
+    WantedModelDto:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the item to crawl for.
+          example: "McLaren MP"
+        producer:
+          type: string
+          description: The producer or manufacturer of the item. Not used in the search query.
+          example: "Minishamps"
+        minPrice:
+          type: integer
+          description: The minimum price for the item. Lots cheaper are filtered out.
+          example: 200
+        maxPrice:
+          type: integer
+          description: The maximum price for the item. Lots that more expensive are filtered out.
+          example: 700
+        currency:
+          type: string
+          description: The currency for the price (e.g., USD, EUR, PLN, etc).
+          example: "PLN"
+        active:
+          type: boolean
+          description: Flag if model is still needed. JFI, crawler ignore the flag.
+          example: true
+      required:
+        - name
+        - producer
+        - minPrice
+        - maxPrice
+        - currency
+
+    FoundModelDto:
+      type: object
+      properties:
+        uri:
+          type: string
+          description: The URI of the found lot.
+          example: "https://example.com/item/123"
+        nameRequested:
+          type: string
+          description: The name that was requested in the search.
+          example: "McLaren MP"
+        lotTitle:
+          type: string
+          description: The title of the lot or item.
+          example: "McLaren MP4 12C 1/18"
+        producer:
+          type: string
+          description: The producer or manufacturer of the item.
+          example: "AutoArt"
+        price:
+          type: integer
+          description: The price of the found item.
+          example: 699
+        currency:
+          type: string
+          description: The currency of the price.
+          example: "zł"
